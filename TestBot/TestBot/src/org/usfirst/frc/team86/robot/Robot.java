@@ -15,7 +15,7 @@ public class Robot extends IterativeRobot {
 	@Override	
 	public void robotInit() {
 		rightMotor = new Victor(0);
-		rightMotor.setInverted(true);
+		leftMotor.setInverted(true);
 		leftMotor = new Victor(1);
 	}
 
@@ -42,7 +42,7 @@ public class Robot extends IterativeRobot {
 		if(controller.getX() > 0 ) {
 			leftMotor.set((controller.getX() + controller.getY())/2);
 		} else if (controller.getX() < 0 ) {
-			rightMotor.set( (controller.getX() + controller.getY())/2 );
+			rightMotor.set((controller.getX() - controller.getY())/2 );
 		}
 	}
 
